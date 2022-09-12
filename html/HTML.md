@@ -32,6 +32,22 @@
     4. < h4>
     5. < h5>
     6. < h6>
-v 
+
+## what is HTML DOM?
+
+
+The HTML DOM is an API (Programming Interface) for JavaScript:
+
+    JavaScript can add/change/remove HTML elements
+    JavaScript can add/change/remove HTML attributes
+    JavaScript can add/change/remove CSS styles
+    JavaScript can react to HTML events
+    JavaScript can add/change/remove HTML events
+
+
+## HTML how is it parsed?
+
+
+
 
 
