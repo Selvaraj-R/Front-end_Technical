@@ -1,0 +1,87 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+:root {
+  --primary: #e1f8dc;
+  --bs-badge-border-radius: 0px !important;
+}
+
+.main-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.div-holder {
+  background-color: white;
+  height: 90vh;
+  width: 40rem;
+  border-radius: 15px;
+  display: grid;
+  padding-bottom: 10px;
+}
+.top {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  padding: 20px;
+}
+.flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0px 20px;
+}
+.btn.btn-outline-green {
+  background-color: transparent;
+  border: 1px solid #d3d3d3;
+}
+.btn.btn-outline-green:hover {
+  background-color: var(--primary);
+}
+.form-control:focus {
+  outline: var(--primary);
+  border: 1px solid var(--primary);
+  box-shadow: 0 0 0 0.2rem var(--primary);
+}
+.badge {
+  background-color: var(--primary);
+  color: black;
+  font-weight: 300;
+  /* border: 1px solid #d3d3d3; */
+}
+.icon-holder {
+  display: flex;
+  margin: 10px 20px;
+  justify-content: space-between;
+}
+.list-task{
+  height: 69vh;
+  position: relative;
+  margin: 0px 20px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  overflow-y: scroll;
+}
+.task-display{
+  width: 100%;
+  font-size: 18px;
+  border-bottom: 1px solid #d3d3d3;
+  padding: 5px ;
+  line-height: 25px;
+  display: flex;
+  align-items: center;
+
+}
