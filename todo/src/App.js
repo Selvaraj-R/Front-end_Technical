@@ -1,19 +1,20 @@
-import Todo from "./components/todo";
-import header from "./components/todo";
+import Todo from "./components/review";
 import "./index.css";
 
 const primaryColor = "#e1f8dc";
+
+const mainDivStyle = {
+  width: "100%",
+  height: "100%",
+  background: primaryColor,
+  position: "absolute",
+}
 
 function App() {
   return (
     <div
       className="main-div"
-      style={{
-        width: "100%",
-        height: "100%",
-        background: primaryColor,
-        position: "absolute",
-      }}
+      style={mainDivStyle}
     >
       <div className="div-holder">
           <Todo />

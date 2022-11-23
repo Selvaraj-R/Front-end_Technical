@@ -46,9 +46,16 @@ code {
 .btn.btn-outline-green {
   background-color: transparent;
   border: 1px solid #d3d3d3;
+  transition: all ease 0.8ms;
+
 }
 .btn.btn-outline-green:hover {
   background-color: var(--primary);
+  box-shadow: 0 0 0 0.2rem var(--primary);
+  border: 1px solid transparent;
+  transform: scale(0.8);
+  transition: all ease 0.8ms;
+
 }
 .form-control:focus {
   outline: var(--primary);
@@ -84,4 +91,12 @@ code {
   display: flex;
   align-items: center;
 
+}
+.bx.bxs-x-square:hover{
+  color: red;
+}
+.clear {
+  background-color: #fb4d46;
+  outline: none;
+  border: none;
 }

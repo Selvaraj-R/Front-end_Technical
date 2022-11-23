@@ -1,0 +1,52 @@
+.container div h1{
+  width: 100%;
+  text-align: center;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.expense-div {
+  display: flex;
+  background-color: white;
+  width: 90%;
+  height: 80px;
+  /* min-width: 15rem; */
+  /* max-width: fit-content; */
+  line-height: 80px;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: space-between;
+  margin: 5px 20px;
+  border-radius: 30px;
+  box-shadow: 0px 0px 10px 0px rgb(180, 175, 175);
+  padding: 0px 20px;
+  align-items: center;
+}
+
+.expense-item {
+  display: flex;
+  width: 20rem;
+  justify-content: space-between;
+  max-width: 20rem;
+  
+}
+.expense-item > div{
+  text-align: left;
+  width:20rem;
+  height: inherit;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+}
+.expense-amount{
+  text-align: left;
+width: 5rem;
+
+}

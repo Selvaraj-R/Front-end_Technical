@@ -1,42 +1,48 @@
-import React, { useSta, useState } from "react";
+import React, { useState } from "react"; 
 
 export default function Todo() {
 
-  localStorage.setItem("localTasks", JSON.stringify([{ id: new Date().getTime.toString, title: "Learn Cycling" },{ id: new Date().getTime.toString, title: "Learn React" },{ id: new Date().getTime.toString, title: "Finish topics on time" }]));
-
   const [task, setTask] = useState("");
-  const [tasks, setTasks] = useState([]);
-  const taskFromLocal = JSON.parse(localStorage.getItem("localTasks"));
-  console.log(taskFromLocal);
+  const taskFromLocal = JSON.parse(localStorage.getItem("localTasks")) || [];
+  const [tasks, setTasks] = useState(taskFromLocal);
 
-  const addTask = (e) => {
-    if (task) {
-      const newTask = { id: new Date().getTime.toString, title: task };
+  const addTask = (inputTask) => {  // don't need input  
+  // params => setstate
+
+  
+    if (inputTask) {
+      const newTask = { id: new Date().getTime.toString, title: inputTask };
       setTasks([...tasks, newTask]);
-      localStorage.setItem("localTasks", JSON.stringify([...tasks, newTask]));
-      setTask("");
+      localStorage.setItem("localTasks", JSON.stringify([...tasks, newTask])); //why when what ,do we need it here 
+      setTask("");  // it can be a reuseable function so we need to rely on params not on state
     }
   };
+
+  const deleteTask = (taskTobeDeleted)=> {
+    const FilteredTask = taskFromLocal.filter((t)=> t !== taskTobeDeleted ) //check id don't itertate full object || delete only this id 
+    setTasks(FilteredTask)//go and find and delete || local utility to delte from backend
+    localStorage.setItem("localTasks", JSON.stringify(FilteredTask));
+  }
 
   return (
     <React.Fragment>
       <div className="top">
-        <h1> Todo App</h1>
+        <h1> Task board</h1>
       </div>
       <div className="flex">
         <input
           name="task"
-          type="task"
+          type="text"
           value={task}
           placeholder="Add items..."
           className="form-control m-1"
-          onChange={(e) => setTask(e.target.value)}
+          onChange={(targetedValue) => setTask(targetedValue.target.value)}
         />
         <button className="btn btn-outline-green m-1" onClick={addTask}>
           <i className="bx bxs-add-to-queue"></i>
         </button>
         <button className="btn btn-outline-green m-1">
-          <i className="bx bxs-search"></i>
+          <i className="bx bx-search"></i>
         </button>
       </div>
 
@@ -48,7 +54,7 @@ export default function Todo() {
             : taskFromLocal.length === 1
             ? " 1 task"
             : taskFromLocal.length > 1
-            ? ` ${.length} tasks`
+            ? ` ${taskFromLocal.length} tasks`
             : null}
         </div>
         <div className="none">
@@ -63,6 +69,7 @@ export default function Todo() {
           <React.Fragment key={e.id}>
             <div className="task-display">
               <i className="bx bx-checkbox"></i>
+              <i className='bx bxs-x-square' onClick={()=>deleteTask(e)}></i>
               <span>{e.title}</span>
             </div>
           </React.Fragment>
@@ -71,3 +78,4 @@ export default function Todo() {
     </React.Fragment>
   );
 }
+
