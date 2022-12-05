@@ -1,0 +1,16 @@
+.inputBox{
+    outline: none;
+    border: none;
+    border-bottom: 1px dotted black;
+    font-size: 18px;
+    line-height: 12px;
+    width: 20rem;
+    margin :20px;
+}
+.numberBox
+{
+    border : 1px solid black;
+    width: 8rem;
+    padding: 2px 10px;
+
+}
